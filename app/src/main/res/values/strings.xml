@@ -12,6 +12,7 @@
     <!-- Side Bar -->
     <string name="txtUrl">Escriba la url</string>
     <string name="btnAbrirUrl">ABRIR</string>
+    <string name="txtTituloHistorial">Ultima visita:</string>
 
     <!-- Web view -->
     <string name="btnCerrarWebView">X</string>

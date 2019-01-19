@@ -1,6 +1,8 @@
 package tolbar.com.nasa;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,12 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class SideBar extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private EditText txtUrl;
+    private TextView txtResultadoUltimaVisita;
 
 
     @Override
@@ -49,6 +53,11 @@ public class SideBar extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         txtUrl = findViewById(R.id.txtUrl);
+        txtResultadoUltimaVisita = findViewById(R.id.txtResultadoUltimaVisita);
+
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        String ultimaVisita = preferences.getString("ultimaVisita", "N/A");
+        txtResultadoUltimaVisita.setText(ultimaVisita);
     }
 
     @Override
@@ -111,6 +120,11 @@ public class SideBar extends AppCompatActivity
     }
 
     public void abrirUrl(View view) {
+        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("ultimaVisita", txtUrl.getText().toString());
+        editor.commit();
+
         Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("txtUrl", txtUrl.getText().toString());
         startActivity(intent);

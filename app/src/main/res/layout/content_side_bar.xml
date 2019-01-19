@@ -18,7 +18,8 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/txtUrl"
-        android:inputType="textUri" />
+        android:inputType="textUri"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnAbrirUrl"
@@ -28,6 +29,30 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="88dp"
         android:onClick="abrirUrl"
-        android:text="@string/btnAbrirUrl" />
+        android:text="@string/btnAbrirUrl"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="168dp"
+        android:text="@string/txtTituloHistorial"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtResultadoUltimaVisita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="204dp"
+        android:text="NO APLICA"
+        android:textSize="24sp" />
 
 </RelativeLayout>

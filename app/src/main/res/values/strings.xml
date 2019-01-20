@@ -17,6 +17,10 @@
     <!-- Web view -->
     <string name="btnCerrarWebView">X</string>
 
+    <string name="descripcionImagen">Descripcion imagen</string>
+
+
+
 
     <!-- Strings related to Settings -->
 

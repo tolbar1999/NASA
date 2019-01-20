@@ -34,6 +34,7 @@ public class WebViewFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_web_view, container, false);
+        getActivity().setTitle("Web View");
         txtUrl = view.findViewById(R.id.txtUrl);
         txtResultadoUltimaVisita = view.findViewById(R.id.txtResultadoUltimaVisita);
         btnAbrirUrl = view.findViewById(R.id.btnAbrirUrl);

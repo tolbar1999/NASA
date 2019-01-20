@@ -22,9 +22,6 @@ import android.widget.Toast;
 public class SideBar extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private EditText txtUrl;
-    private TextView txtResultadoUltimaVisita;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +49,9 @@ public class SideBar extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        txtUrl = findViewById(R.id.txtUrl);
-        txtResultadoUltimaVisita = findViewById(R.id.txtResultadoUltimaVisita);
-
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        String ultimaVisita = preferences.getString("ultimaVisita", "N/A");
-        txtResultadoUltimaVisita.setText(ultimaVisita);
+        // Aqui es el fragmento por defecto
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_sidebar, new WebViewFragment()).commit();
+        navigationView.setCheckedItem(R.id.nav_web_view);
     }
 
     @Override
@@ -100,12 +94,12 @@ public class SideBar extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+        if (id == R.id.nav_web_view) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_sidebar, new WebViewFragment()).commit();
+        } else if (id == R.id.nav_fotos) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_sidebar, new FotosFragment()).commit();
+        } else if (id == R.id.nav_chat) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_sidebar, new ChatFragment()).commit();
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -118,16 +112,4 @@ public class SideBar extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    public void abrirUrl(View view) {
-        SharedPreferences preferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("ultimaVisita", txtUrl.getText().toString());
-        editor.commit();
-
-        Intent intent = new Intent(this, WebViewActivity.class);
-        intent.putExtra("txtUrl", txtUrl.getText().toString());
-        startActivity(intent);
-    }
-
 }

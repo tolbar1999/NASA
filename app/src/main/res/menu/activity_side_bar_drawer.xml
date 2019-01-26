@@ -17,9 +17,9 @@
             android:icon="@drawable/ic_chat_black_24dp"
             android:title="Chat" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_api_rest"
+            android:icon="@drawable/ic_swap_calls_black_24dp"
+            android:title="API REST" />
     </group>
 
     <item android:title="Communicate">

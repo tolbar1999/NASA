@@ -40,6 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtNombreRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre"
@@ -61,6 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtApellidoRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Apellido"
@@ -81,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtCelularRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Celular"
@@ -101,6 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtCorreoRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Correo electrónico"
@@ -123,6 +127,7 @@
         app:passwordToggleTint="@android:color/white">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/txtClaveRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
@@ -130,7 +135,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/cbAceptoTerminosRegistro"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -151,6 +156,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/cbAceptoTerminosRegistro" />
 
 </android.support.constraint.ConstraintLayout>

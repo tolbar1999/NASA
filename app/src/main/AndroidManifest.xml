@@ -32,7 +32,9 @@
                 android:value="tolbar.com.nasa.SideBar" />
         </activity>
         <activity android:name=".WebViewActivity" />
-        <activity android:name=".RegistroLoginActivity" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".RegistroLoginActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>
